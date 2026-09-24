@@ -7,8 +7,15 @@ require("dotenv").config();
 
 const app = express();
 
+const frontendUrl = process.env.FRONTEND_URL?.trim().replace(/\/$/, "");
+const allowedOrigin = frontendUrl
+  ? /^https?:\/\//i.test(frontendUrl)
+    ? frontendUrl
+    : `https://${frontendUrl}`
+  : true;
+
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "*"
+  origin: allowedOrigin
 }));
 app.use(express.json());
 
