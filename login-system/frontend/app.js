@@ -1,5 +1,5 @@
 // Point to your live Render backend URL (no trailing slash at the end!)
-const API_URL = "https://your-backend-name.onrender.com";
+const API_URL = "https://login-system-bkfw.onrender.com";
 
 // 1. Form Toggling Logic (Makes the Register form pop up when clicked!)
 const showRegisterLink = document.getElementById('showRegister');
